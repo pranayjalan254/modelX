@@ -1,7 +1,5 @@
 "use client";
-
-import { Brain } from "lucide-react";
-
+import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -10,7 +8,13 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <Brain className="h-6 w-6 text-primary" />
+                <Image
+                  src="/logo.svg"
+                  alt="ModelX Logo"
+                  width={32}
+                  height={32}
+                  className="text-primary"
+                />
                 <span className="text-lg font-bold">ModelX</span>
               </div>
               <p className="text-sm text-muted-foreground">
