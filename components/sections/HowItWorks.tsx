@@ -10,40 +10,40 @@ const steps = [
   {
     icon: Wallet,
     title: "Connect Wallet",
-    description: "Link your Solana wallet to access the marketplace"
+    description: "Link your Solana wallet to access the marketplace",
   },
   {
     icon: Key,
     title: "Get Tokens",
-    description: "Purchase AIMarket tokens using SOL"
+    description: "Purchase ModelX tokens.",
   },
   {
     icon: MessageSquare,
     title: "Start Using",
-    description: "Access AI models with pay-per-prompt pricing"
-  }
+    description: "Access AI models with pay-per-prompt pricing",
+  },
 ];
 
 const devSteps = [
   {
     icon: Code,
     title: "Build Your Model",
-    description: "Create and test your AI model"
+    description: "Create and test your AI model",
   },
   {
     icon: Upload,
     title: "Deploy Model",
-    description: "Upload to our decentralized network"
+    description: "Upload to our decentralized network",
   },
   {
     icon: Coins,
-    title: "Earn Rewards",
-    description: "Get paid in tokens for model usage"
-  }
+    title: "Get Paid",
+    description: "Earn revenue from users who access your model",
+  },
 ];
 
 export default function HowItWorks() {
-  const [activeView, setActiveView] = useState<'users' | 'developers'>('users');
+  const [activeView, setActiveView] = useState<"users" | "developers">("users");
 
   return (
     <section id="how-it-works" className="py-24 bg-accent/50">
@@ -56,7 +56,9 @@ export default function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl font-bold mb-4">How It Works</h2>
-          <p className="text-muted-foreground">Choose your path in the AI marketplace</p>
+          <p className="text-muted-foreground">
+            Choose your path in the AI marketplace
+          </p>
         </motion.div>
 
         {/* Mobile Toggle */}
@@ -65,10 +67,11 @@ export default function HowItWorks() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setActiveView('users')}
+              onClick={() => setActiveView("users")}
               className={cn(
                 "relative",
-                activeView === 'users' && "bg-primary text-primary-foreground hover:bg-primary/90"
+                activeView === "users" &&
+                  "bg-primary text-primary-foreground hover:bg-primary/90"
               )}
             >
               For Users
@@ -76,10 +79,11 @@ export default function HowItWorks() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => setActiveView('developers')}
+              onClick={() => setActiveView("developers")}
               className={cn(
                 "relative",
-                activeView === 'developers' && "bg-primary text-primary-foreground hover:bg-primary/90"
+                activeView === "developers" &&
+                  "bg-primary text-primary-foreground hover:bg-primary/90"
               )}
             >
               For Developers
@@ -91,12 +95,12 @@ export default function HowItWorks() {
         <div className="lg:hidden">
           <motion.div
             key={activeView}
-            initial={{ opacity: 0, x: activeView === 'users' ? -20 : 20 }}
+            initial={{ opacity: 0, x: activeView === "users" ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: activeView === 'users' ? 20 : -20 }}
+            exit={{ opacity: 0, x: activeView === "users" ? 20 : -20 }}
             transition={{ duration: 0.3 }}
           >
-            {activeView === 'users' ? (
+            {activeView === "users" ? (
               <div className="relative">
                 {steps.map((step, index) => (
                   <div key={index} className="relative mb-12 last:mb-0">
@@ -107,8 +111,12 @@ export default function HowItWorks() {
                         </div>
                       </div>
                       <div className="ml-6">
-                        <h4 className="text-xl font-semibold mb-2">{step.title}</h4>
-                        <p className="text-muted-foreground">{step.description}</p>
+                        <h4 className="text-xl font-semibold mb-2">
+                          {step.title}
+                        </h4>
+                        <p className="text-muted-foreground">
+                          {step.description}
+                        </p>
                       </div>
                     </div>
                     {index < steps.length - 1 && (
@@ -128,8 +136,12 @@ export default function HowItWorks() {
                         </div>
                       </div>
                       <div className="ml-6">
-                        <h4 className="text-xl font-semibold mb-2">{step.title}</h4>
-                        <p className="text-muted-foreground">{step.description}</p>
+                        <h4 className="text-xl font-semibold mb-2">
+                          {step.title}
+                        </h4>
+                        <p className="text-muted-foreground">
+                          {step.description}
+                        </p>
                       </div>
                     </div>
                     {index < devSteps.length - 1 && (
@@ -170,8 +182,12 @@ export default function HowItWorks() {
                       </div>
                     </div>
                     <div className="ml-6">
-                      <h4 className="text-xl font-semibold mb-2">{step.title}</h4>
-                      <p className="text-muted-foreground">{step.description}</p>
+                      <h4 className="text-xl font-semibold mb-2">
+                        {step.title}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {step.description}
+                      </p>
                     </div>
                   </div>
                   {index < steps.length - 1 && (
@@ -208,8 +224,12 @@ export default function HowItWorks() {
                       </div>
                     </div>
                     <div className="ml-6">
-                      <h4 className="text-xl font-semibold mb-2">{step.title}</h4>
-                      <p className="text-muted-foreground">{step.description}</p>
+                      <h4 className="text-xl font-semibold mb-2">
+                        {step.title}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {step.description}
+                      </p>
                     </div>
                   </div>
                   {index < devSteps.length - 1 && (
